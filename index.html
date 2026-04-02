@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>집에가고싶은학생의웹사이트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+
+    <style>
+        #header {
+            background-color: gold;
+            padding: 5px;
+            font-size: large;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .chapter {
+            font-family: "Yeon Sung", system-ui;
+            font-weight: normal;
+            font-size: 25px;
+            color:black;
+            letter-spacing: 0.05em;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .one {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .one>li {
+            display: flex;
+            align-items: center;
+            padding: 80px;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        .a {
+            font-size: 25px;
+        }
+
+        .text {
+            margin-bottom: 200px;
+        }
+        .second {
+            position: relative;
+            background-image:linear-gradient(120deg, #ff0000, #ff7f00, #ffff00,#00ff00,#0000ff, #4b0082,#9400d3);;
+            background-size: cover;
+        }
+        .second::before {
+            content: " ";
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: url(Hello_Bitches_Bonobono_Food_Jjamppong_Film_PNG-removebg-preview.png);
+            background-size: 150px;
+            background-repeat: repeat;
+            transform: rotate(120deg);
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .btn {
+            display: flex;
+            width: 250px;
+            height: 80px;
+            font-size: xx-large;
+            font-family:'Bangers',cursive;
+            color: red;
+            background-color: yellow;
+            border-radius: 60px;
+            border: 3px solid black;
+            transition: all 0.3s ease;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0) scale(1.3);}
+        50% { transform: translateY(-15px) scale(1.4);}
+        }
+        @keyframes bouncing {
+        0%, 100% { transform: translateY(50px) scale(1.3);}
+        50% { transform: translateY(50px) scale(1.5);}
+        }
+        @keyframes slow {
+        0%   { transform: translateX(-50px); }
+        100% { transform: translateX(50px); }
+        }        
+        @keyframes blink {
+        0%   { opacity: 1; }
+        50%  { opacity: 0.2; }
+        100% { opacity: 1; } 
+        }
+        @keyframes spin {
+            0%,100% {transform: rotate(0deg);}
+            25% {transform: rotate(15deg);}
+            75% {transform: rotate(-15deg);}
+        }
+        @keyframes fast {
+            0% {transform: translateX(-30px) translateY(0);}
+            25% {transform: translateX(30px) translateY(0);}
+            50% {transform: translateX(30px) translateY(-30px);}
+            75% {transform: translateX(30px) translateY(30px);}
+            100% {transform: translateX(-30px) translateY(0);}
+        }
+        @keyframes cold {
+            0% {transform: translatex(-20px);}
+            100% {transform: translatex(20px);}
+        }
+        @keyframes blinkPattern {
+            0%,15%,30%,70%,85%,100%{opacity: 1;}
+            8%,23%,50%{opacity: 0};
+        }
+        
+        .btn:hover {
+            animation: bounce 0.1s ease infinite;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgb(249, 0, 83); 
+        }
+        .slow {
+            animation: slow 1s linear infinite alternate;
+        }
+        .fade {
+            animation: blink 5s ease infinite;
+        }
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+        .yeah {
+            animation: bouncing 0.1s ease infinite;
+        }
+        .angry {
+            animation: blink 2s ease-in-out infinite;
+        }
+        .white {
+            color: white;
+        }
+        .fast {
+            animation: fast 0.1s linear infinite alternate;
+        }
+        .cold {
+            animation: cold 0.18s linear infinite alternate;
+        }
+        .tired {
+            animation: blinkPattern 1.5s ease-in-out infinite;
+        }
+        .b {
+            font-size: 40px;
+            font-weight: normal;
+        }
+        .card {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media(max-width:786px) {
+            .card {grid-template-columns: repeat(2,1fr);}
+        }
+        @media (max-width: 480px) {
+             .cards {grid-template-columns:1fr;}
+        }
+        .img  {
+            width: 90%;
+            max-width: 1100px;
+        }
+    </style>
+</head>
+<body class="second">
+    <div id="header">
+        <h1>집에가고싶은학생의특징</h1>
+        </div>
+
+    <div class="chapter">
+        <h2 class="b">소개</h2>
+        <p>집에 너무 가고 싶어서 우울한</p>
+    <a class="btn" href="https://youtu.be/7ILZuYwYyh4?t=1865&si=cTcL6RsTCezq-Q2R" target="_blank">기전여고</button></a> 
+        <p>학생입니다.</p>
+    </div>
+
+    <div class="chapter">
+        <h2 class="b">특징</h2>
+        <ul class="one">
+            <li class="item">집에 가고 싶어서 표정이 죽상일 때가 대다수이다.
+            <img class="img slow" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXRu8vWkMUQWnWiO5PN2Ax68DU4ntEQGxgA&s" alt="설명"
+            width="400">
+            </li>
+
+            <li class="item">배가 고파서 자꾸만 학교 공식 웹사이트에 들어가서 중식 메뉴를 확인한다.
+            <img class="img fade" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDokKh8KlNfGvo7bN3ku9DJCJ7HpAGaUhFsw&s" alt="설명"
+            width="400">
+            </li>
+            <li class="item">어쩔 수 없이 수업을 꼬박꼬박 듣지만 가끔 헤드뱅잉을 하며 졸 때가 있다.
+            <img class="img spin" src="https://i.pinimg.com/564x/63/7a/d4/637ad433799532569463aada4691dcd1.jpg" alt="설명"
+            width="400">
+            </li>
+
+        </ul>
+    </div>
+    
+    <div class="chapter">
+        <h2 class="b">유의 사항</h2>
+        <ol class="one">
+            <li class="item">너만 집에 가고 싶은 줄 아냐고 말한다면 물릴 수도 있습니다.
+            <img class="yeah" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlP4bHXVWlTC948VrL9GBFzOtbGpTBBDTi9Q&s" alt="스폰지밥"
+            width="400">
+            </li>
+    
+            <li class="item">만약 당신이 교사라면 집에 일찍 보내주겠다고 거짓말을 해보세요.
+                <br> 반응이 어떨지 궁금하지 않으십니까?
+            <img class="angry" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnrPuh2xuYhp0Ggpnlc3YpImkN2u_AAiKNIQ&s" alt=">:0"
+            width="400">
+            </li>
+            <li class="item">'집에 가고 싶다.', '네가 뭔데 집을 못 가게 해?' 등의 이야기는 모든 학생이 입에 달고 사는 말입니다. 이상한 게 아니고 정상입니다.
+            <img class="fast" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7jrKmS1Z74iaOjCQZYGd3gKOW5Hwj9qS4oA&s" alt="ddd"
+            width="400">
+            </li>
+        </ol>
+    </div>
+
+    <div class="chapter white">
+        <p class="text">사진을 눌러보세요! 사진과 알맞은 영상이 나옵니다.</p>
+        <p class="a">학교가 생각하는 학생이 원하는 것</p>
+        <a href="https://youtu.be/fnoeQPinV8Y?si=a5efceJNxU_aVi0O" target="_blank" class="item">
+            <img src="https://mblogthumb-phinf.pstatic.net/MjAyMzEyMTBfMjcz/MDAxNzAyMjAyOTkyMTE1.NDtTSZTnuC4Uef-HJGGk-xgqMXudmjsKTFqkgeMAVYUg.bDxEgDJ8LB7BXCJP_NzdudjCS5DTEdEVd4iliXs-Le4g.JPEG.cplab_dy/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpeg?type=w800" alt="공부하기싫내"
+            width="400"> </a>
+
+        <p class="a">학생이 생각하는 학생이 원하는 것</p> 
+        <a href="https://youtu.be/E0W5sJZ2d64?si=Hn5Qnx_2y8ltsRlV" target="_blank" class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9va2BY1jMwpzyS4HqcCkCZDfhzcY2riWIg&s" alt="ddd"
+            width="400"> </a>
+    </div>
+
+
+    <div class="chapter white">
+    <h2 class="b">최근 이슈</h2>
+    <ul class="one">
+        <li class="item">도대체 꽃샘추위의 탈을 쓴 미친 추위는 언제 사라지는가에 대하여.
+        <img class="cold" src="https://cdn.maily.so/0nb18hzasmqyinv6hgkfpsoyvxp0" alt="진짜너무추워"
+        width="400"></li>
+
+        <li class="item">모고끝난다음날은 좀 쉬게해줘라 5시10분까지뺑이치게해놓고지금뭐? - 3/25
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlkkfHlWH1A5YM8hfNglsrrLDDLt1aw2rbVg&s" alt="쉬게해달라고"
+            width="400">     
+        </li>
+        <li class="item">어제 운동장 50m를 개처럼뛰어다녔더니 하체를 잃게되엇습니다..... - 3/26
+            <img class="tired" src="https://assets.clip-studio.com/ko-kr/description/1835213/img/f3e8eb1717-574c-7793-5008-049509ff4a.png" alt="허리부터발끝까지졸라아파"
+            width="400">
+        </li>
+    </ul>
+    </div>
+
+
+</body>
+</html>
