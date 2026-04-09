@@ -179,6 +179,16 @@
             width: 80%;
             max-width: 500px;
         }
+        @keyframes pulse {
+            0%,100%{transform: scale(1);}
+            50%{transform: scale(1.05);}
+        }
+        .handsome {
+            animation: pulse 1s ease infinite;
+        }
+        .onion {
+            animation: fast 1s linear infinite alternate;
+        }
     </style>
 </head>
 <body class="second">
@@ -237,12 +247,12 @@
         <p class="text">사진을 눌러보세요! 사진과 알맞은 영상이 나옵니다.</p>
         <p class="a">학교가 생각하는 학생이 원하는 것</p>
         <a href="https://youtu.be/fnoeQPinV8Y?si=a5efceJNxU_aVi0O" target="_blank" class="item">
-            <img src="https://mblogthumb-phinf.pstatic.net/MjAyMzEyMTBfMjcz/MDAxNzAyMjAyOTkyMTE1.NDtTSZTnuC4Uef-HJGGk-xgqMXudmjsKTFqkgeMAVYUg.bDxEgDJ8LB7BXCJP_NzdudjCS5DTEdEVd4iliXs-Le4g.JPEG.cplab_dy/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpeg?type=w800" alt="공부하기싫내"
+            <img class="handsome" src="https://mblogthumb-phinf.pstatic.net/MjAyMzEyMTBfMjcz/MDAxNzAyMjAyOTkyMTE1.NDtTSZTnuC4Uef-HJGGk-xgqMXudmjsKTFqkgeMAVYUg.bDxEgDJ8LB7BXCJP_NzdudjCS5DTEdEVd4iliXs-Le4g.JPEG.cplab_dy/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpeg?type=w800" alt="공부하기싫내"
             width="400"> </a>
 
         <p class="a">학생이 생각하는 학생이 원하는 것</p> 
         <a href="https://youtu.be/E0W5sJZ2d64?si=Hn5Qnx_2y8ltsRlV" target="_blank" class="item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9va2BY1jMwpzyS4HqcCkCZDfhzcY2riWIg&s" alt="ddd"
+            <img class="onion" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9va2BY1jMwpzyS4HqcCkCZDfhzcY2riWIg&s" alt="ddd"
             width="400"> </a>
     </div>
 
@@ -265,27 +275,53 @@
     </ul>
     </div>
 
+    <h1 id="homesweet">집에가고싶어요</h1>
+    <p class="subal">집에가고싶다고</p>
+    <button id="siburu">아집에보내달라고!!!!!!!!!</button>
+
     <script>
+        // alert("안녕하지않다.집에보내줘라. 집에가고싶은학생의 사이트에 방문하신 걸 환영하지 않습니다! 뒤돌아정신병원가.");
+        // let input = prompt("나이가 몇이니? - ");
+        // let age = Number(input);
 
-alert("안녕하지않다.집에보내줘라. 집에가고싶은학생의 사이트에 방문하신 걸 환영하지 않습니다! 뒤돌아정신병원가.");
-        let input = prompt("나이가 몇이니? - ");
-        let age = Number(input);
+        // if (age<=13) {
+        //     alert("님은 초딩이군요!");
+        // }
+        // else if (age<=16) {
+        //     alert("님은 중딩이군요!");
+        // }
+        // else if (age<=19) {
+        //     alert("님은 고딩이군요! 저런~");
+        // }
+        // else if (age<=29) {
+        //     alert("개강한 대학생은 개강하다...");
+        // }
+        // else {
+        //     alert("헋. 늙은이다!");
+        // }
 
-        if (age<=13) {
-            alert("님은 초딩이군요!");
+        function babo(name){
+            console.log("뒤돌아정신병원가" + name);
         }
-        else if (age<=16) {
-            alert("님은 중딩이군요!");
+        babo("박한슬");
+        babo("이예은");
+        babo("한지우");
+
+        // let name = prompt("느의이름은?");
+        // let grade = prompt("느의학년은?");
+
+        function greet(name, grade) {
+         return grade + "학년 "
+        + name + "님, 씹덕이시네요!";
         }
-        else if (age<=19) {
-            alert("님은 고딩이군요! 저런~");
-        }
-        else if (age<=29) {
-            alert("개강한 대학생은 개강하다고 들엇음. ㅎㅇㅌ~");
-        }
-        else {
-            alert("헋. 늙은이다!");
-        }
-    </script>
+
+        let msg = greet(name, grade);
+        console.log(msg);
+
+        let homesweet = document.getElementById("homesweet");
+        let subal = document.querySelector(".subal");
+        let siburu = document.querySelector("#siburu");
+        console.log(homesweet);
+</script>
 </body>
 </html>
