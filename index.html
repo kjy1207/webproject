@@ -131,7 +131,7 @@
         .btn:hover {
             animation: bounce 0.1s ease infinite;
             transition: all 0.4s ease;
-            box-shadow: 0 10px 40px rgb(249, 0, 83); 
+            box-shadow: 0 10px 40px blue; 
         }
         .slow {
             animation: slow 1s linear infinite alternate;
@@ -310,18 +310,38 @@
         // let name = prompt("느의이름은?");
         // let grade = prompt("느의학년은?");
 
-        function greet(name, grade) {
-         return grade + "학년 "
-        + name + "님, 씹덕이시네요!";
-        }
+        // function greet(name, grade) {
+        //  return grade + "학년 "
+        // + name + "님, 씹덕이시네요!";
+        // }
 
-        let msg = greet(name, grade);
-        console.log(msg);
+        // let msg = greet(name, grade);
+        // console.log(msg);
 
         let homesweet = document.getElementById("homesweet");
         let subal = document.querySelector(".subal");
         let siburu = document.querySelector("#siburu");
         console.log(homesweet);
+
+        let el = document.getElementById("homesweet");
+        el.textContent = "집에가고싶어서학탈함";
+        el.style.color = "#FFFFFF";
+        el.style.fontSize = "3rem";
+        el.style.backgroundColor = "#000000";
+
+        let btn = document.querySelector(".btn");
+        
+        btn.addEventListener("click", function() {
+            sessionStorage.setItem("visited", "yes")
+        });
+        document.addEventListener("visibilitychange", function(){
+            if(document.visibilityState === "visible") {
+                if(sessionStorage.getItem("visited") === "yes") {
+                alert("주원 쌤을 위한 (빅엿을 가장한) 이벤트 ^^");
+                sessionStorage.removeItem("visited");
+                }
+            }
+        });
 </script>
 </body>
 </html>
