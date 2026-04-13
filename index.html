@@ -189,12 +189,34 @@
         .onion {
             animation: fast 1s linear infinite alternate;
         }
+        .wow {
+            background: gold;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 0;
+        }
+        .hehe {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 25px;
+            background-color: beige;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: fit-content;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body class="second">
     <div id="header">
         <h1>집에가고싶은학생</h1>
         </div>
+
+        <div class="hehe">
+        <p class="click">님이 이 사이트에서 클릭한 횟수</p>
+        <h1 class="count">0</h1>  </div>  
 
     <div class="chapter">
         <h2 class="b">소개</h2>
@@ -275,10 +297,6 @@
     </ul>
     </div>
 
-    <h1 id="homesweet">집에가고싶어요</h1>
-    <p class="subal">집에가고싶다고</p>
-    <button id="siburu">아집에보내달라고!!!!!!!!!</button>
-
     <script>
         // alert("안녕하지않다.집에보내줘라. 집에가고싶은학생의 사이트에 방문하신 걸 환영하지 않습니다! 뒤돌아정신병원가.");
         // let input = prompt("나이가 몇이니? - ");
@@ -318,17 +336,6 @@
         // let msg = greet(name, grade);
         // console.log(msg);
 
-        let homesweet = document.getElementById("homesweet");
-        let subal = document.querySelector(".subal");
-        let siburu = document.querySelector("#siburu");
-        console.log(homesweet);
-
-        let el = document.getElementById("homesweet");
-        el.textContent = "집에가고싶어서학탈함";
-        el.style.color = "#FFFFFF";
-        el.style.fontSize = "3rem";
-        el.style.backgroundColor = "#000000";
-
         let btn = document.querySelector(".btn");
         
         btn.addEventListener("click", function() {
@@ -342,6 +349,30 @@
                 }
             }
         });
+
+        let display = document.querySelector(".count");
+        let count = sessionStorage.getItem("clickcount");
+        if (count === null){
+            count =0;
+        } 
+        else {
+            count = Number(count);
+        }
+        display.textContent = count;
+        document.addEventListener("click", function(){
+            count++;
+            display.textContent = count;
+            sessionStorage.setItem("clickcount", count);
+        });
+
+         
+         let bList = document.querySelectorAll(".b");
+         bList.forEach(function(b){
+         b.addEventListener("click", function(){
+            console.log("클릭");
+            b.classList.toggle("wow");
+         });
+         });
 </script>
 </body>
 </html>
