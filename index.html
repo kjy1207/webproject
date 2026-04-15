@@ -207,6 +207,50 @@
             width: fit-content;
             margin: 0 auto;
         }
+        textarea {
+            width: 300px;
+            height: 80px;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            resize: none;
+            text-align: left;
+        }
+        textarea:focus {
+            box-shadow: 0 0 0 2px #ff0095;
+        }
+        .post-area {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .tweet {
+            margin-top: 8px;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff0095;
+            color: white;
+            cursor: pointer;
+        }
+        .textcount {
+            font-size: 12px;
+            color: white;
+            margin-top: 5px;
+        }
+        .feed {
+            margin-top: 20px;
+        }
+        .post {
+            color: black;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body class="second">
@@ -294,8 +338,18 @@
             <img class="tired" src="https://assets.clip-studio.com/ko-kr/description/1835213/img/f3e8eb1717-574c-7793-5008-049509ff4a.png" alt="허리부터발끝까지졸라아파"
             width="400">
         </li>
+
+        <li class="item">네 최근 이슈는 뭐니? 잼얘 공유 좀. 같이 웃자.
+            <div class="post-area">
+                <textarea id="Put" maxlength="500" placeholder="메세지를 입력하세요...타자개느리네...."></textarea>
+                <button class="tweet">게시</button>
+                <p class="textcount">0 / 500</p>
+            </div>
+            <div class="feed"></div>
+        </li>
     </ul>
     </div>
+
 
     <script>
         // alert("안녕하지않다.집에보내줘라. 집에가고싶은학생의 사이트에 방문하신 걸 환영하지 않습니다! 뒤돌아정신병원가.");
@@ -351,7 +405,7 @@
         });
 
         let display = document.querySelector(".count");
-        let count = sessionStorage.getItem("clickcount");
+        let count = 0;
         if (count === null){
             count =0;
         } 
@@ -372,6 +426,36 @@
             console.log("클릭");
             b.classList.toggle("wow");
          });
+         });
+
+         let Textarea = document.getElementById("Put");
+         let counter = document.querySelector(".textcount");
+         let button = document.querySelector(".tweet");
+         let feed = document.querySelector(".feed");
+         let posts = JSON.parse(localStorage.getItem("posts"))  || [];
+
+         posts.forEach(function(text) {
+         let post = document.createElement("div");
+         post.classList.add("post");
+         post.textContent = "익명: " + text;
+         feed.appendChild(post);
+         });
+
+         Textarea.addEventListener("input", function() {
+            let length = Textarea.value.length;
+            counter.textContent = length + " / 500";
+         });
+         button.addEventListener("click", function() {
+            let text = Textarea.value.trim();
+            if (text === "") return;
+            let post = document.createElement("div");
+            post.classList.add("post");
+            post.textContent = "익명: " + text;
+            feed.prepend(post);
+            posts.unshift(text);
+            localStorage.setItem("posts",JSON.stringify(posts));
+            Textarea.value = "";
+            counter.textContent = "0 / 500";
          });
 </script>
 </body>
