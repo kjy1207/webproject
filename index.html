@@ -251,6 +251,20 @@
             margin-top: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
+        .post {
+            position: relative;
+            padding: 12px;
+        }
+        .post button {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            color: red;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: "Arial Rounded MT Bold", sans-serif;
+        }
     </style>
 </head>
 <body class="second">
@@ -350,6 +364,7 @@
     </ul>
     </div>
 
+    <!-- <audio class="music" src=""></audio> -->
 
     <script>
         // alert("안녕하지않다.집에보내줘라. 집에가고싶은학생의 사이트에 방문하신 걸 환영하지 않습니다! 뒤돌아정신병원가.");
@@ -378,17 +393,6 @@
         babo("박한슬");
         babo("이예은");
         babo("한지우");
-
-        // let name = prompt("느의이름은?");
-        // let grade = prompt("느의학년은?");
-
-        // function greet(name, grade) {
-        //  return grade + "학년 "
-        // + name + "님, 씹덕이시네요!";
-        // }
-
-        // let msg = greet(name, grade);
-        // console.log(msg);
 
         let btn = document.querySelector(".btn");
         
@@ -434,10 +438,22 @@
          let feed = document.querySelector(".feed");
          let posts = JSON.parse(localStorage.getItem("posts"))  || [];
 
-         posts.forEach(function(text) {
+         posts.forEach(function(text, index) {
          let post = document.createElement("div");
          post.classList.add("post");
-         post.textContent = "익명: " + text;
+
+         let content = document.createElement("span");
+         content.textContent = "익명: " + text;
+         let delBtn = document.createElement("button");
+         delBtn.textContent = "X";
+         delBtn.addEventListener("click", function(){
+            post.remove();
+            posts.splice(index,1);
+            localStorage.setItem("posts", JSON.stringify(posts));
+         });
+         post.appendChild(content);
+         post.appendChild(delBtn);
+
          feed.appendChild(post);
          });
 
@@ -450,13 +466,35 @@
             if (text === "") return;
             let post = document.createElement("div");
             post.classList.add("post");
-            post.textContent = "익명: " + text;
+            
+            let content = document.createElement("span");
+            content.textContent = "익명: " + text;
+            let delBtn = document.createElement("button");
+            delBtn.textContent = "X";
+            delBtn.addEventListener("click", function() {
+                post.remove();
+                posts.splice(0,1);
+                localStorage.setItem("posts", JSON.stringify(posts));
+            });
+            post.appendChild(content);
+            post.appendChild(delBtn);
+
             feed.prepend(post);
             posts.unshift(text);
             localStorage.setItem("posts",JSON.stringify(posts));
             Textarea.value = "";
             counter.textContent = "0 / 500";
          });
-</script>
+         
+         document.addEventListener("keydown", function(e) {
+            console.log(e.key);
+         });
+        //  let sound = document.querySelector("music");
+        //  document.addEventListener("keydown", function(){
+        //     sound.currenTime = 0;
+        //     sound.play();
+        //  });
+        
+    </script>
 </body>
 </html>
