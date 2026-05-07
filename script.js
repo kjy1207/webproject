@@ -64,6 +64,7 @@
          });
 
          let Textarea = document.getElementById("Put");
+         let nicknameInput = document.getElementById("nickname");
          let counter = document.querySelector(".textcount");
          let button = document.querySelector(".tweet");
          let feed = document.querySelector(".feed");
@@ -73,8 +74,13 @@
          let post = document.createElement("div");
          post.classList.add("post");
 
+        let nickname = nicknameInput.value.trim();
+        if (nickname === "") {
+            nickname = "익명";
+        }
+
          let content = document.createElement("span");
-         content.textContent = "익명: " + text;
+
          let delBtn = document.createElement("button");
          delBtn.textContent = "X";
          delBtn.addEventListener("click", function(){
@@ -99,7 +105,7 @@
             post.classList.add("post");
             
             let content = document.createElement("span");
-            content.textContent = "익명: " + text;
+            content.innerHTML = "<strong>" + nickname + "</strong><br>" + text;
             let delBtn = document.createElement("button");
             delBtn.textContent = "X";
             delBtn.addEventListener("click", function() {

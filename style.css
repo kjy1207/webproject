@@ -6,6 +6,7 @@
             margin-bottom: 10px;
             text-align: center;
         }
+
         .chapter {
             font-family: "Yeon Sung", system-ui;
             font-weight: normal;
@@ -43,11 +44,13 @@
         .text {
             margin-bottom: 200px;
         }
+
         .second {
             position: relative;
             background-image:linear-gradient(120deg, #ff0000, #ff7f00, #ffff00,#00ff00,#0000ff, #4b0082,#9400d3);;
             background-size: cover;
         }
+
         .second::before {
             content: " ";
             position: fixed;
@@ -63,6 +66,7 @@
             pointer-events: none;
             z-index: -1;
         }
+
         .btn {
             display: flex;
             width: 250px;
@@ -83,24 +87,29 @@
         0%, 100% { transform: translateY(0) scale(1.3);}
         50% { transform: translateY(-15px) scale(1.4);}
         }
+
         @keyframes bouncing {
         0%, 100% { transform: translateY(50px) scale(1.3);}
         50% { transform: translateY(50px) scale(1.5);}
         }
+
         @keyframes slow {
         0%   { transform: translateX(-50px); }
         100% { transform: translateX(50px); }
         }        
+
         @keyframes blink {
         0%   { opacity: 1; }
         50%  { opacity: 0.2; }
         100% { opacity: 1; } 
         }
+
         @keyframes spin {
             0%,100% {transform: rotate(0deg);}
             25% {transform: rotate(15deg);}
             75% {transform: rotate(-15deg);}
         }
+
         @keyframes fast {
             0% {transform: translateX(-30px) translateY(0);}
             25% {transform: translateX(30px) translateY(0);}
@@ -108,10 +117,12 @@
             75% {transform: translateX(30px) translateY(30px);}
             100% {transform: translateX(-30px) translateY(0);}
         }
+
         @keyframes cold {
             0% {transform: translatex(-20px);}
             100% {transform: translatex(20px);}
         }
+
         @keyframes blinkPattern {
             0%,15%,30%,70%,85%,100%{opacity: 1;}
             8%,23%,50%{opacity: 0};
@@ -122,68 +133,87 @@
             transition: all 0.4s ease;
             box-shadow: 0 10px 40px blue; 
         }
+
         .slow {
             animation: slow 1s linear infinite alternate;
         }
+
         .fade {
             animation: blink 5s ease infinite;
         }
+
         .spin {
             animation: spin 1s linear infinite;
         }
+
         .yeah {
             animation: bouncing 0.1s ease infinite;
         }
+
         .angry {
             
             animation: blink 2s ease-in-out infinite;
         }
+
         .white {
             color: white;
         }
+
         .fast {
             animation: fast 0.1s linear infinite alternate;
         }
+
         .cold {
             animation: cold 0.18s linear infinite alternate;
         }
+
         .tired {
             animation: blinkPattern 1.5s ease-in-out infinite;
         }
+
         .b {
             font-size: 40px;
             font-weight: normal;
         }
+
         .card {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
         }
+
         @media(max-width:786px) {
             .card {grid-template-columns: repeat(2,1fr);}
         }
+
         @media (max-width: 480px) {
              .cards {grid-template-columns:1fr;}
         }
+
         .img  {
             width: 80%;
             max-width: 500px;
         }
+
         @keyframes pulse {
             0%,100%{transform: scale(1);}
             50%{transform: scale(1.05);}
         }
+
         .handsome {
             animation: pulse 1s ease infinite;
         }
+
         .onion {
             animation: fast 1s linear infinite alternate;
         }
+
         .wow {
             background: gold;
             border-radius: 8px;
             display: inline-block;
             margin: 0;
         }
+
         .hehe {
             display: flex;
             flex-direction: column;
@@ -196,6 +226,7 @@
             width: fit-content;
             margin: 0 auto;
         }
+
         textarea {
             width: 300px;
             height: 80px;
@@ -208,49 +239,90 @@
             resize: none;
             text-align: left;
         }
+
         textarea:focus {
             box-shadow: 0 0 0 2px #ff0095;
         }
-        .post-area {
-            margin-top: 10px;
-            text-align: center;
+
+        .post-area textarea{
+            width: 90%;
+            height: 100%;   
+            resize: none;
+            padding: 12px;
+            border-radius: 16px;
+            border: 3px solid black;
+            background-color: #fff7fd;
+            font-size: 14px;
+            font-family: "Arial Rounded MT Bold", sans-serif;
+            box-shadow: 5px 5px 0px black;
         }
+
         .tweet {
-            margin-top: 8px;
-            padding: 6px 12px;
-            border: none;
-            border-radius: 8px;
+            margin-top: 10px;
+            padding: 10px 18px;
+            border: 3px solid black;
+            border-radius: 14px;
             background-color: #ff0095;
             color: white;
+            font-weight: bold;
+            font-size: 15px;
             cursor: pointer;
+            box-shadow: 4px 4px 0 black;
+            transition: 0.15s;
         }
+
+        .twweet:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+
         .textcount {
             font-size: 12px;
-            color: white;
-            margin-top: 5px;
+            color: #ffd6ef;
+            margin-top: 8px;
         }
+
         .feed {
             margin-top: 20px;
         }
-        .post {
-            color: black;
-            background-color: white;
-            padding: 10px;
-            border-radius: 10px;
-            margin-top: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+
         .post {
             position: relative;
-            padding: 12px;
+            color: black;
+            background-color: white;
+            padding: 16px;
+            border-radius: 18px;
+            margin-top: 14px;
+            box-shadow: 5px 5px 0px black;
+            font-family: "Arial Rounded MT Bold", sans-serif;
+            word-break: breeak-word;
         }
+        
         .post button {
             position: absolute;
-            right: 8px;
-            bottom: 8px;
-            color: red;
-            background: none;
-            border: none;
+            top: -10px;
+            right: -10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 3px solid black;
+            color: white;
+            background: #ff3c78;
             cursor: pointer;
+            font-weight: bold;
+            box-shadow: 2px 2px 0 black;
+        }
+        
+        .post button:hover {
+            transform: rotate(12deg) scale(1.1);
+        }
+
+        #nickname {
+            width: 60%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 12px;
+            border: 3px solid black;
+            background-color: #fff7fd;
             font-family: "Arial Rounded MT Bold", sans-serif;
+            box-shadow: 4px 4px 0px black;
         }
